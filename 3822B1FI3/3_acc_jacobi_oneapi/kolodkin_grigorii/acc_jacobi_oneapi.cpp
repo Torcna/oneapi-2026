@@ -1,13 +1,13 @@
 #include "acc_jacobi_oneapi.h"
+#include <cmath>
 
 std::vector<float> JacobiAccONEAPI(
-        const std::vector<float> a,
-        const std::vector<float> b,
+        const std::vector<float>& a,
+        const std::vector<float>& b,
         float accuracy,
         sycl::device device) {
 
     const int n = b.size();
-    const int max_iterations = 1024;
 
     std::vector<float> x(n, 0.0f);
     std::vector<float> x_new(n, 0.0f);
@@ -19,7 +19,7 @@ std::vector<float> JacobiAccONEAPI(
 
     sycl::queue q(device);
 
-    for (int iter = 0; iter < max_iterations; ++iter) {
+    for (int iter = 0; iter < ITERATIONS; ++iter) {
         q.submit([&](sycl::handler& cgh) {
             auto a_acc = buf_a.get_access<sycl::access::mode::read>(cgh);
             auto b_acc = buf_b.get_access<sycl::access::mode::read>(cgh);
