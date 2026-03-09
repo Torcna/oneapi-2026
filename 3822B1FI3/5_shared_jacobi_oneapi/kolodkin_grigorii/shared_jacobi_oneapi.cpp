@@ -25,7 +25,8 @@ std::vector<float> JacobiSharedONEAPI(const std::vector<float>& a,
             sycl::local_accessor<float> x_local(sycl::range<1>(n), cgh);
             sycl::local_accessor<float> x_new_local(sycl::range<1>(n), cgh);
 
-            cgh.parallel_for(sycl::nd_range<1>(sycl::range<1>(n), sycl::range<1>(256)),
+            int local_size = std::min(n, 256);
+            cgh.parallel_for(sycl::nd_range<1>(sycl::range<1>(n), sycl::range<1>(local_size)),
                 [=](sycl::nd_item<1> item) {
                     int i = item.get_global_id(0);
                     
@@ -69,4 +70,5 @@ std::vector<float> JacobiSharedONEAPI(const std::vector<float>& a,
 
     return x_host;
 }
+
 
