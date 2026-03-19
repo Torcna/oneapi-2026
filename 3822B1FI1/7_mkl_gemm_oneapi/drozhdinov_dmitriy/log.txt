@@ -1,0 +1,4 @@
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/7_mkl_gemm_oneapi/drozhdinov_dmitriy/mkl_gemm_oneapi.cpp:2:10: fatal error: 'buffer.hpp' file not found
+    2 | #include <buffer.hpp>
+      |          ^~~~~~~~~~~~
+1 error generated.
