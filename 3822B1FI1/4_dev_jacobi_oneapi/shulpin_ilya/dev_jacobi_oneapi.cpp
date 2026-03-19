@@ -36,9 +36,11 @@ std::vector<float> JacobiDevONEAPI(
         {
             q.memset(max_diff_dev, 0, sizeof(float)).wait();
 
+            sycl::buffer<float, 1> diff_buf{&max_diff_host, sycl::range<1>{1}};
+
             q.submit([&](sycl::handler& h)
             {
-                auto max_red = sycl::reduction(max_diff_dev, h, sycl::maximum<float>());
+                auto max_red = sycl::reduction(diff_buf, h, sycl::maximum<float>());
 
                 h.parallel_for(
                     sycl::range<1>{n},
