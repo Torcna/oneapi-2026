@@ -505,6 +505,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|chistov_alexey|0.4474|3|
 |**REF**|**REF**|**0.4723**|**-**|
 |3822B1FI1|rezantseva_anastasia|0.5868|5|
+|3822B1FI2|yasakova_tanya|0.8381|2|
 |3822B1FI3|frolova_elizaveta|0.8388|3|
 |3822B1FI1|shurigin_sergey|0.8417|7|
 |3822B1FI3|kolodkin_grigorii|0.8418|2|
@@ -518,7 +519,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI2|bessonov_egor|1.0007|1|
 |3822B1FI1|shulpin_ilya|1.0230|8|
 |3822B1FI1|mironov_arseniy|TEST FAILED|-|
-|3822B1FI2|yasakova_tanya|TOO SLOW|-|
 
 ## 3_acc_jacobi_oneapi (4096 elements)
 |Group|Name|Result|Rank|
@@ -534,8 +534,8 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|beskhmelnova_kseniya|0.3462|1|
 |3822B1FI3|lopatin_ilya|0.3551|3|
 |3822B1FI1|chistov_alexey|0.3639|3|
+|3822B1FI2|yasakova_tanya|0.3980|2|
 |3822B1FI1|drozhdinov_dmitriy|0.5052|2|
-|3822B1FI2|yasakova_tanya|BUILD FAILED|2|
 |3822B1FI1|shulpin_ilya|TEST FAILED|-|
 |3822B1FI1|mironov_arseniy|TEST FAILED|-|
 
@@ -654,10 +654,10 @@ Passed: 4
 ## 3822B1FI2
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI2|bessonov_egor|5/9|320|
-|3822B1FI2|yasakova_tanya|8/9|473|
+|3822B1FI2|bessonov_egor|5/9|319|
+|3822B1FI2|yasakova_tanya|**9/9**|**567**|
 
-Passed: 0
+Passed: 1
 
 ## 3822B1FI3
 |Group|Name|Passed|Score|
@@ -672,7 +672,7 @@ Passed: 0
 
 Passed: 3
 
-**Total Passed: 7**
+**Total Passed: 8**
 
 ---
 *Maximum Score: 576 (64 per task)*

@@ -1,4 +1,0 @@
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI2/3_acc_jacobi_oneapi/yasakova_tanya/acc_jacobi_oneapi.cpp:1:10: fatal error: 'integral_oneapi.h' file not found
-    1 | #include "integral_oneapi.h"
-      |          ^~~~~~~~~~~~~~~~~~~
-1 error generated.
