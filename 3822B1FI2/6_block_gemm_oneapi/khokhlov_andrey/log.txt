@@ -1,2 +1,8 @@
-terminate called after throwing an instance of 'sycl::_V1::exception'
-  what():  Total number of work-items in a work-group cannot exceed 512 for this kernel
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI2/6_block_gemm_oneapi/khokhlov_andrey/block_gemm_oneapi.cpp:53:8: error: no member named 'whait' in 'sycl::event'; did you mean 'wait'?
+   53 |     }).whait();
+      |        ^~~~~
+      |        wait
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/event.hpp:82:8: note: 'wait' declared here
+   82 |   void wait();
+      |        ^
+1 error generated.

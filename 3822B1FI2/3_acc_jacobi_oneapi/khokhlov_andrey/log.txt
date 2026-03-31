@@ -1,1 +1,4 @@
-Incorrect results, test input_128.bin, difference 0.001549350712506553
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI2/3_acc_jacobi_oneapi/khokhlov_andrey/acc_jacobi_oneapi.cpp:51:21: error: use of undeclared identifier 'ok'
+   51 |                     ok = false;
+      |                     ^
+1 error generated.
