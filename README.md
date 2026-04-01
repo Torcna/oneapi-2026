@@ -526,8 +526,8 @@ std::vector<float> JacobiKokkos(
 |3822B1FI2|khokhlov_andrey|0.9988|4|
 |3822B1FI2|bessonov_egor|1.0007|1|
 |3822B1FI3|kholin_kirill|1.0007|4|
+|3822B1FI3|chizhov_maxim|1.0034|7|
 |3822B1FI1|shulpin_ilya|1.0230|8|
-|3822B1FI3|chizhov_maxim|BUILD FAILED|-|
 
 ## 3_acc_jacobi_oneapi (4096 elements)
 |Group|Name|Result|Rank|
@@ -713,7 +713,7 @@ Passed: 2
 ## 3822B1FI3
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI3|chizhov_maxim|4/9|221|
+|3822B1FI3|chizhov_maxim|5/9|273|
 |3822B1FI3|ekaterina_kozlova|6/9|347|
 |3822B1FI3|frolova_elizaveta|**9/9**|**540**|
 |3822B1FI3|kholin_kirill|**9/9**|**521**|
