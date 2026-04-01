@@ -1,12 +1,12 @@
-#include "shared_jacobi_oneapi.h"
+﻿#include "shared_jacobi_oneapi.h"
 #include <cmath>
 #include <algorithm>
 
 const int MAX_ITERATION_LIMIT = 20000;
 
 std::vector<float> JacobiSharedONEAPI(
-        const std::vector<float>& a, const std::vector<float>& b,
-        float accuracy, sycl::device& device) {
+    const std::vector<float>& a, const std::vector<float>& b,
+    float accuracy, sycl::device device) {
     
     size_t matrixSize = b.size();
     sycl::queue computeQueue(device);
