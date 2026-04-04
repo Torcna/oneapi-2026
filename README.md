@@ -688,9 +688,9 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|frolova_elizaveta|0.3331|2|
 |3822B1FI1|rezantseva_anastasia|0.3360|4|
 |3822B1FI2|yasakova_tanya|0.3641|1|
+|3822B1FI1|drozhdinov_dmitriy|0.3698|8|
 |3822B1FI3|kolodkin_grigorii|0.3787|1|
 |3822B1FI1|solovev_alexey|0.3892|3|
-|3822B1FI1|drozhdinov_dmitriy|TEST FAILED|-|
 
 # Tasks Done
 ## 3822B1FI1
@@ -698,16 +698,16 @@ std::vector<float> JacobiKokkos(
 |-----|----|------|-----|
 |3822B1FI1|beskhmelnova_kseniya|**9/9**|**532**|
 |3822B1FI1|chistov_alexey|**9/9**|**540**|
-|3822B1FI1|drozhdinov_dmitriy|8/9|440|
+|3822B1FI1|drozhdinov_dmitriy|**9/9**|**491**|
 |3822B1FI1|ionova_ekaterina|**9/9**|**478**|
 |3822B1FI1|kabalova_valeria|2/9|116|
 |3822B1FI1|mironov_arseniy|4/9|201|
 |3822B1FI1|rezantseva_anastasia|**9/9**|**521**|
 |3822B1FI1|shulpin_ilya|**9/9**|**493**|
 |3822B1FI1|shurigin_sergey|**9/9**|**502**|
-|3822B1FI1|solovev_alexey|**9/9**|**515**|
+|3822B1FI1|solovev_alexey|**9/9**|**514**|
 
-Passed: 7
+Passed: 8
 
 ## 3822B1FI2
 |Group|Name|Passed|Score|
@@ -734,7 +734,7 @@ Passed: 2
 
 Passed: 5
 
-**Total Passed: 14**
+**Total Passed: 15**
 
 ---
 *Maximum Score: 576 (64 per task)*
