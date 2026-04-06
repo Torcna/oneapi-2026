@@ -670,13 +670,13 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|kholin_kirill|2.3205|4|
 |3822B1FI3|kolodkin_grigorii|2.3206|1|
 |3822B1FI3|chizhov_maxim|2.3227|6|
+|3822B1FI2|khokhlov_andrey|2.3227|4|
 |3822B1FI1|ionova_ekaterina|2.3228|6|
 |3822B1FI1|drozhdinov_dmitriy|2.3230|7|
 |3822B1FI2|bessonov_egor|2.3230|2|
 |3822B1FI1|shulpin_ilya|2.9876|4|
 |3822B1FI2|guseynov_emil|2.9993|3|
 |3822B1FI1|shurigin_sergey|2.9995|8|
-|3822B1FI2|khokhlov_andrey|BUILD FAILED|-|
 
 ## 9_jacobi_kokkos (4096 elements)
 |Group|Name|Result|Rank|
@@ -721,13 +721,13 @@ Passed: 8
 ## 3822B1FI2
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI2|bessonov_egor|**9/9**|**558**|
-|3822B1FI2|guseynov_emil|7/9|421|
-|3822B1FI2|khokhlov_andrey|8/9|487|
+|3822B1FI2|bessonov_egor|**9/9**|**557**|
+|3822B1FI2|guseynov_emil|7/9|420|
+|3822B1FI2|khokhlov_andrey|**9/9**|**547**|
 |3822B1FI2|sdobnov_vladimir|2/9|117|
 |3822B1FI2|yasakova_tanya|**9/9**|**553**|
 
-Passed: 2
+Passed: 3
 
 ## 3822B1FI3
 |Group|Name|Passed|Score|
@@ -743,7 +743,7 @@ Passed: 2
 
 Passed: 6
 
-**Total Passed: 16**
+**Total Passed: 17**
 
 ---
 *Maximum Score: 576 (64 per task)*
