@@ -1,5 +1,6 @@
 #include "acc_jacobi_oneapi.h"
 #include <algorithm>
+#include <cmath>
 
 using buftype = sycl::buffer<float>;
 
@@ -13,10 +14,10 @@ std::vector<float> JacobiAccONEAPI(const std::vector<float> &a,
   auto stop = [&]() -> bool {
     float norm = 0.0f;
     for (int idx = 0; idx < prev_res.size(); ++idx) {
-      float el = res[idx] - prev_res[idx];
-      norm += el * el;
+      float el = std::fabs(res[idx] - prev_res[idx]);
+      if (el > norm) norm = el;
     }
-    return norm < accuracy * accuracy;
+    return norm < accuracy;
   };
 
   sycl::queue gpu_queue(device);
