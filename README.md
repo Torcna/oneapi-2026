@@ -608,6 +608,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI2|guseynov_emil|BUILD FAILED|-|
 |3822B1FI2|plekhanov_daniil|BUILD FAILED|-|
 |3822B1FI2|vyunova_ekaterina|BUILD FAILED|-|
+|3822B1FI2|vyunov_danila|BUILD FAILED|-|
 
 ## 5_shared_jacobi_oneapi (4096 elements)
 |Group|Name|Result|Rank|
