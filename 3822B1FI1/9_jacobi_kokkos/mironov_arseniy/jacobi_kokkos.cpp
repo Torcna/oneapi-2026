@@ -10,7 +10,7 @@ std::vector<float> JacobiKokkos(const std::vector<float>& a,
 
   int size = b.size();
 
-  View<float **, LayoutLeft, SYLDeviceUSMSpace> in_a("in_a", size, size);
+  View<float **, LayoutLeft, SYCLDeviceUSMSpace> in_a("in_a", size, size);
   View<float *, SYCLDeviceUSMSpace> in_b("in_b", size);
   View<float *, SYCLDeviceUSMSpace> prev_res("prev_res", size);
   View<float *, SYCLDeviceUSMSpace> res("res", size);
@@ -49,12 +49,13 @@ std::vector<float> JacobiKokkos(const std::vector<float>& a,
     parallel_reduce(
         "Check", RangePolicy<SYCL>(0, size),
         KOKKOS_LAMBDA(int i, float &mx) {
-          float el = std::fabs(res(i) - prev_res(i));
+          float el = Kokkos::fabs(res(i) - prev_res(i));
           if (el > mx)
             mx = el;
         },
         Kokkos::Max<float>(norm));
 
+    fence();
     deep_copy(prev_res, res);
 
     if (norm < accuracy) {

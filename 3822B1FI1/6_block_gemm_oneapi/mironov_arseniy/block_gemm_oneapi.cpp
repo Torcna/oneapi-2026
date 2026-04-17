@@ -7,7 +7,10 @@ std::vector<float> GemmBlockONEAPI(const std::vector<float> &a,
 
   sycl::queue gpu_queue(device);
   std::vector<float> res(size * size, 0.0f);
-  const int block_size = std::min(size, 16);
+  int block_size = std::min<int>(static_cast<int>(size), 16);
+  if (size % block_size) {
+    block_size = size;
+  }
   int num_blocks = size / block_size;
 
   auto alloc = [&gpu_queue](size_t size) -> float * {
@@ -45,9 +48,9 @@ std::vector<float> GemmBlockONEAPI(const std::vector<float> &a,
                            int loc_j = ids.get_local_id(1);
                            float sum = 0.0f;
 
-                           for (int k = 0; k < num_blocks; ++k) {
-                             int i = k * block_size + loc_i;
-                             int j = k * block_size + loc_j;
+                           for (int global_k = 0; global_k < num_blocks; ++global_k) {
+                             int i = global_k * block_size + loc_i;
+                             int j = global_k * block_size + loc_j;
 
                              local_a[loc_i][loc_j] = in_a[glob_i * size + j];
                              local_b[loc_i][loc_j] = in_b[i * size + glob_j];
