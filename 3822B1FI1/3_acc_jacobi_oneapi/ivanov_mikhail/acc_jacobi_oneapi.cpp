@@ -18,8 +18,8 @@ std::vector<float> JacobiAccONEAPI(
   float diff = 0.0f;
   
   for (size_t iteration = 0; iteration < ITERATIONS; iteration++) {
-    sycl::buffer<float> buf_diff(&diff, sycl::range<1>(1));
     diff = 0.0f;
+    sycl::buffer<float> buf_diff(&diff, sycl::range<1>(1));
 
     {
       q.submit([&](sycl::handler& h) {
@@ -48,6 +48,11 @@ std::vector<float> JacobiAccONEAPI(
       q.wait();
     }
 
+    {
+      sycl::host_accessor acc(buf_diff, sycl::read_only);
+      diff = acc[0];
+    }
+
     if (diff < accuracy * accuracy)
       break;
 
@@ -56,7 +61,7 @@ std::vector<float> JacobiAccONEAPI(
 
   std::vector<float> result(n);
   {
-    auto in_cur_x = buf_cur_x.get_access<sycl::access::mode::read>();
+    auto in_cur_x = buf_prev_x.get_access<sycl::access::mode::read>();
     for (size_t i = 0; i < n; i++) {
       result[i] = in_cur_x[i];
     }
